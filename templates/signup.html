@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet"
+        href="{{ url_for('static', filename= 'fonts/material-icon/css/material-design-iconic-font.min.css') }}">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,700&display=swap" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/register.css" rel="stylesheet"/>
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+
+
+ 
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style1.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css.map') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/boostrap.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static' ,filename='scss/style.scss' ) }}">
+  <link rel="stylesheet"
+        href="{{ url_for('static', filename= 'fonts/material-icon/css/material-design-iconic-font.min.css') }}">
+
+    <!-- Main css -->
+   
+  
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/register.css' ) }}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  
+  
+
+</head>
+
+<body>
+    <div class="hero_area" >
+        <!-- header section strats -->
+        <header class="header_section">
+          <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
+              <a class="navbar-brand" href="index.html">
+                <span>
+                  Vscanner
+                </span>
+              </a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+    
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+                  <ul class="navbar-nav  ">
+                    <li class="nav-item active">
+                      <a class="nav-link"  href="{{ url_for('home' ) }}">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                   
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{ url_for('signin' ) }}">Login</a>
+                    </li>
+                  </ul>
+                  <div class="user_option">
+                    <a href="">
+                      <img src="images/user.png" alt="">
+                    </a>
+                    <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
+                      <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </header>
+        <!-- end header section -->
+      </div>
+      
+
+    <div class="main">
+        <!-- Sign up form -->
+        <section class="signup">
+            <div class="containerr" style="margin-left:12%">
+                <div class="signup-content">
+                    <div class="signup-form">
+                        <h2 class="form-title" style="color:#03173a">Sign up</h2>
+                        <div style="margin-bottom:10px">
+                            <label class="label-agree-term" id="error_message" style="color: red;display: none;"></label>
+                        </div>
+                        <form method="POST" class="register-form" id="register-form">
+                            <div class="form-group">
+                                <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                <input type="text" name="name" id="name" placeholder="Your Name" />
+                            </div>
+                            <div class="form-group">
+                                <label for="email"><i class="zmdi zmdi-email"></i></label>
+                                <input type="email" name="email" id="email" placeholder="Your Email" />
+                            </div>
+                            <div class="form-group">
+                                <label for="pass"><i class="zmdi zmdi-lock"></i></label>
+                                <input type="password" name="pass" id="pass" placeholder="Password" />
+                            </div>
+                            <div class="form-group">
+                                <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
+                                <input type="password" name="repass" id="repass" placeholder="Repeat your password" />
+                            </div>
+                            <div class="form-group">
+                                <label for="agree-term" class="label-agree-term">
+                                    <a href="{{url_for('signin')}}" class="signup-image-link"  style="font-size:15px">I am already member</a>
+                                </label>
+                            </div>
+                            <div class="form-button">
+                                <input type="button" style="background-color:#03173a" name="signup" id="signup" class="form-submit" onclick="register();" value="Register" />
+                            </div>
+                            <div style="margin-top:5px;">
+                                <label class="label-agree-term" id="signup_message" style="color: green;display: none;">Registeration Successfully</label>
+                            </div>
+                        </form>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section class="info_section ">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <div class="info_contact">
+              <h5>
+                About Us
+              </h5>
+              <div>
+                <div class="img-box">
+                  <img src="{{ url_for('static', filename= 'images/icons8-address-50.png') }}" width="18px" alt="">
+                </div>
+                <p>
+                  Pakistan
+                </p>
+              </div>
+              <div>
+                <div class="img-box">
+                  <img src="{{ url_for('static', filename= 'images/icons8-phone-24.png') }}" width="12px" alt="">
+                </div>
+                <p>
+                  +01 1234567890
+                </p>
+              </div>
+              <div>
+                <div class="img-box">
+                  <img src="{{ url_for('static', filename= 'images/icons8-email-50.png') }}" width="18px" alt="">
+                </div>
+                <p>
+                  Vscanner@gmail.com
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="info_info">
+              <h5>
+                Informations
+              </h5>
+              <p style="justify-content: space-between; text-align:justify">
+                  A vulnerability scanner is a software tool that identifies and classifies security vulnerabilities in computer systems, networks, and applications.   </div>
+          </div>
+  
+          <div class="col-md-3">
+            <div class="info_insta">
+              <h5  style="margin-left:10%">
+                Available at
+              </h5>
+              <div class="insta_container" >
+                <div>
+                  <a href="">
+                    <div class="insta-box b-1"  style="background:none ">
+                      <img src="{{ url_for('static', filename= 'images/icons8-instagram-30.png') }}" alt="">
+                    </div>
+                  </a>
+                  <a href="">
+                    <div class="insta-box b-2" style="background:none" >
+                      <img src="{{ url_for('static', filename= 'images/icons8-facebook-50.png') }}" style="height:35px;width:35px" alt="">
+                    </div>
+                  </a>
+                </div>
+  
+                <div>
+                  <a href="">
+                    <div class="insta-box b-3" style="background:none">
+                      <img src="{{ url_for('static', filename= 'images/icons8-linked-in-50.png') }}" style="height:35px;width:35px" alt="">
+                    </div>
+                  </a>
+                  <a href="">
+                    <div class="insta-box b-4" style="background:none">
+                      <img src="{{ url_for('static', filename= 'images/icons8-x-50.png') }}" style="height:35px;width:35px" alt="">
+                    </div>
+                  </a>
+                </div>
+                <div>
+                  <a href="">
+                    <div class="insta-box b-3" style="background:none">
+                      <img src="photos/insta.png" alt="">
+                    </div>
+                  </a>
+                  <a href="">
+                    <div class="insta-box b-4" style="background:none">
+                      <img src="photos/insta.png" alt="">
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="info_form ">
+              <h5>
+                VScan privacy policy
+              </h5>
+            <p style="text-align:left-justify">  We take security very seriously. We ensure that the personal info we store is not misused. </p>
+                
+              <div class="social_box">
+                <a href="">
+                  <img src="photos/fb.png" alt="">
+                </a>
+                <a href="">
+                  <img src="photos/twitter.png" alt="">
+                </a>
+                <a href="">
+                  <img src="photos/linkedin.png" alt="">
+                </a>
+                <a href="">
+                  <img src="photos/youtube.png" alt="">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+      <!-- end info_section -->
+    
+    
+      <!-- footer section -->
+      <section class="container-fluid footer_section">
+        <p>
+          &copy; 2024 All Rights Reserved By
+          <a href="https://html.design/">OWSAP</a>
+          Developed By <a href="https://themewagon.com">NM</a>
+        </p>
+      </section>
+      <!-- footer section -->
+    
+      <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+      <script type="text/javascript" src="js/bootstrap.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+      </script>
+      <!-- owl carousel script 
+        -->
+      <script type="text/javascript">
+        $(".owl-carousel").owlCarousel({
+          loop: true,
+          margin: 0,
+          navText: [],
+          center: true,
+          autoplay: true,
+          autoplayHoverPause: true,
+          responsive: {
+            0: {
+              items: 1
+            },
+            1000: {
+              items: 3
+            }
+          }
+        });
+      </script>
+    
+    <script src="{{ url_for('static', filename= 'vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename= 'js/main.js') }}"></script>
+
+    <script type="text/javascript">
+
+        function register(){
+
+            if (($("#name").val() == '') || ($("#email").val() == "")||
+                ($("#pass").val() == '') || ($("#repass").val() == "")){
+
+                $("#error_message").text("All fields are required");
+                $("#error_message").show(0).delay(3000).hide(0);
+            } 
+            else if ($("#pass").val() != $("#repass").val()){
+                $("#error_message").text("Passwords are not same");
+                $("#error_message").show(0).delay(3000).hide(0);
+            }
+
+            else {
+                var data = new FormData();
+                data.append('name', $("#name").val());
+                data.append('email', $("#email").val());
+                data.append('pass', $("#pass").val());
+
+                $.ajax({
+                    type: 'POST',
+                    enctype: 'multipart/form-data',
+                    url: '/register',
+                    processData: false,
+                    cache: false,
+                    timeout: 800000,
+                    contentType: false,
+                    data: data,
+                    success: function(response) {
+                        var data = JSON.parse(response);
+                        if (data == true){
+                            $('#signup_message').show(0).delay(3000).hide(0);
+
+                            setTimeout(function() {
+                                window.location.href = "/signin";
+                            }, 3000);
+
+                        } else{                           
+                            $("#error_message").text("Email Id was already exists.");
+                            $("#error_message").show(0).delay(3000).hide(0);
+                        }
+                    }
+                });
+            }
+        }
+
+    </script>
+</body>
+
+</html>

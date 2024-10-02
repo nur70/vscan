@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scan Results</title>
+</head>
+<body>
+    <h1>Scan Results for {{ url }}</h1>
+    <p>Result: {{ results['result'] }}</p>
+    <p>Details: {{ results['details'] }}</p>
+    <form action="/download_pdf" method="post">
+        <input type="hidden" name="url" value="{{ url }}">
+        <input type="hidden" name="result" value="{{ results['result'] }}">
+        <input type="hidden" name="details" value="{{ results['details'] }}">
+        <button type="submit">Download Report as PDF</button>
+    </form>
+</body>
+</html>
